@@ -1,2 +1,17 @@
-# MegamekManagementConsole
-Manages your MegaMek installation
+# MegaMek Management Console (1.0.0)
+Allows you to manage your MegaMek server with a text based GUI - 
+Official support sites: [Official Github Repo](https://github.com/fstltna/MegamekManagementConsole) - [Official Forum](https://mymegamek.mekcity.com/index.php/forum/our-server-tools)
+
+---
+
+Edit "megamc" and change the settings at the top if your MegaMek server is not in "/root/megamek".
+
+You will need to run cpan and install these modules:
+
+- UI::Dialog
+- Term::ReadKey
+- Term::ANSIScreen
+
+You also need to have my MegaMek Startup Script and MegaMek Backup Script installed.
+
+I then suggest you add this directory (MegamekManagementConsole) into your path, so that you can just run "git pull" to upgrade to the latest version as updates come out.
