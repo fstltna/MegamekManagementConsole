@@ -8,13 +8,14 @@ use Term::ANSIScreen qw(cls);
 
 my $FileEditor = "/bin/nano";
 my $InitDName = "/etc/init.d/megamek";
+my $PAGER = "/usr/bin/less";
 my $MEGAMEKDIR = "/root/megamek";
 
 ###################################################
 # No changes below here
 ###################################################
 
-my $MMC_ver = "1.0.0";
+my $MMC_ver = "1.1.0";
 my $ServerStatus = "foo";
 
 if ($ENV{'EDITOR'})
@@ -70,8 +71,10 @@ sub MainMenu
                                       '3', 'Server Console',
                                       '4', 'Turn Off Respawn',
                                       '5', 'Turn On Respawn',
-                                      '6', 'Edit OpenSim.ini',
+                                      '6', 'Edit Unit Roles',
                                       '7', 'Back Up MegaMek',
+                                      '8', 'MegaMek Log',
+                                      '9', 'Kill MegaMek',
                                       'q', 'Quit MEGAMC' ] );
 }
 
@@ -116,12 +119,25 @@ while (-1)
 	elsif ($menuselection eq "6")
 	{
 		# Edit OpenSim.ini file
-		system("$FileEditor $MEGAMEKDIR/bin/OpenSim.ini");
+		system("$FileEditor $MEGAMEKDIR/data/unit_roles.txt");
 	}
 	elsif ($menuselection eq "7")
 	{
 		# Run a backup
 		system("/root/MegamekBackup/megamekbackup.pl");
+	}
+	elsif ($menuselection eq "8")
+	{
+		# View the main log file
+		system("$PAGER $MEGAMEKDIR/logs/megameklog.txt");
+	}
+	elsif ($menuselection eq "9")
+	{
+		# Kill the MegaMek server process
+		print "Killing process, please wait...";
+		#system("killall /root/minetest/bin/startminetest");
+		system("killall MegaMek.jar");
+                sleep(5);
 	}
 }
 
