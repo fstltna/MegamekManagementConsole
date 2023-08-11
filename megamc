@@ -9,13 +9,13 @@ use Term::ANSIScreen qw(cls);
 my $FileEditor = "/bin/nano";
 my $InitDName = "/etc/init.d/megamek";
 my $PAGER = "/usr/bin/less";
-my $MEGAMEKDIR = "/root/megamek";
+my $MEGAMEKDIR = "/home/megamek/megamek";
 
 ###################################################
 # No changes below here
 ###################################################
 
-my $MMC_ver = "1.1.0";
+my $MMC_ver = "1.1.1";
 my $ServerStatus = "foo";
 
 if ($ENV{'EDITOR'})
@@ -44,7 +44,7 @@ my $menuselection = "";
 
 sub CheckServerStatus
 {
-	my $running=`ps ax|grep MegaMekProcess|grep -v grep`;
+	my $running=`ps ax|grep MegaMek.jar|grep -v grep`;
 	if ($running ne "")
 	{
 		$ServerStatus = "Running";
@@ -124,18 +124,18 @@ while (-1)
 	elsif ($menuselection eq "7")
 	{
 		# Run a backup
-		system("/root/MegamekBackup/megamekbackup.pl");
+		system("/home/megamek/MegamekBackup/megamekbackup.pl");
 	}
 	elsif ($menuselection eq "8")
 	{
 		# View the main log file
-		system("$PAGER $MEGAMEKDIR/logs/megameklog.txt");
+		system("$PAGER $MEGAMEKDIR/logs/megamek.log");
 	}
 	elsif ($menuselection eq "9")
 	{
 		# Kill the MegaMek server process
 		print "Killing process, please wait...";
-		#system("killall /root/minetest/bin/startminetest");
+		#system("killall /home/megamek/minetest/bin/startminetest");
 		system("killall MegaMek.jar");
                 sleep(5);
 	}
