@@ -1,5 +1,5 @@
 # MegaMek Management Console (1.1.1)
-Allows you to manage your MegaMek server with a text based GUI - 
+Allows you to manage your MegaMek server with a text based UI - 
 Official support sites: [Official Github Repo](https://github.com/fstltna/MegamekManagementConsole) - [Official Forum](https://mekcity.com/index.php/forum/megamek)
 
 ---
