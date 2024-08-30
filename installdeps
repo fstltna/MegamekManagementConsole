@@ -1,0 +1,6 @@
+#!/bin/bash
+cpan -i UI::Dialog
+cpan -i Term::ReadKey
+cpan -i Term::ANSIScreen
+
+exit 0

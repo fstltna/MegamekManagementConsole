@@ -6,11 +6,9 @@ Official support sites: [Official Github Repo](https://github.com/fstltna/Megame
 
 Edit "megamc" and change the settings at the top if your MegaMek server is not in "/root/megamek".
 
-You will need to run cpan and install these modules:
+Install the Perl dependancies:
 
-- UI::Dialog
-- Term::ReadKey
-- Term::ANSIScreen
+- ./installdeps
 
 You also need to have my MegaMek Startup Script and MegaMek Backup Script installed.
 
