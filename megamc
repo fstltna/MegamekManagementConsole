@@ -7,7 +7,7 @@ use Term::ReadKey;
 use Term::ANSIScreen qw(cls);
 
 my $FileEditor = "/bin/nano";
-my $InitDName = "/etc/init.d/megamek";
+my $InitDName = "/home/megamek/bin/megamek";
 my $PAGER = "/usr/bin/less";
 my $MEGAMEKDIR = "/home/megamek/megamek";
 
@@ -15,7 +15,7 @@ my $MEGAMEKDIR = "/home/megamek/megamek";
 # No changes below here
 ###################################################
 
-my $MMC_ver = "1.1.1";
+my $MMC_ver = "1.1.2";
 my $ServerStatus = "foo";
 
 if ($ENV{'EDITOR'})
