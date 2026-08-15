@@ -7,15 +7,15 @@ use Term::ReadKey;
 use Term::ANSIScreen qw(cls);
 
 my $FileEditor = "/bin/nano";
-my $InitDName = "/home/megamek/bin/megamek";
+my $InitDName = "/home/mekuser/bin/megamek";
 my $PAGER = "/usr/bin/less";
-my $MEGAMEKDIR = "/home/megamek/megamek";
+my $MEGAMEKDIR = "/home/mekuser/mekhq";
 
 ###################################################
 # No changes below here
 ###################################################
 
-my $MMC_ver = "1.1.2";
+my $MMC_ver = "1.2.0";
 my $ServerStatus = "foo";
 
 if ($ENV{'EDITOR'})
@@ -124,7 +124,7 @@ while (-1)
 	elsif ($menuselection eq "7")
 	{
 		# Run a backup
-		system("/home/megamek/MegamekBackup/megamekbackup.pl");
+		system("/home/mekuser/MegamekBackup/megamekbackup.pl");
 	}
 	elsif ($menuselection eq "8")
 	{
@@ -135,7 +135,7 @@ while (-1)
 	{
 		# Kill the MegaMek server process
 		print "Killing process, please wait...";
-		#system("killall /home/megamek/minetest/bin/startminetest");
+		#system("killall /home/mekuser/minetest/bin/startminetest");
 		system("killall MegaMek.jar");
                 sleep(5);
 	}
